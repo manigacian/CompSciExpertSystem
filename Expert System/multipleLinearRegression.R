@@ -15,10 +15,10 @@ test_set = testset
 # test_set = scale(test_set)
 
 regressor = lm(formula = Risk.Factor ~ .,
-               data = training_set)
+               data = dataset)
 
-y_pred = predict(regressor, newdata = test_set)
-
+y_pred = predict(regressor, newdata = testset)
+View(y_pred)
 library(ggplot2)
 ggplot() +
   geom_point(aes(x = test_set$Age.Group, y = test_set$Risk.Factor), 
